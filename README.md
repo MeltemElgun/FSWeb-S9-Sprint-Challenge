@@ -51,15 +51,13 @@ Bu challengeda bir [WIDGET](https://advanced-react-grid.herokuapp.com/) için bi
 - "AppFunctional.js" tarafından sunulan bileşen, stateful olan işlevsel bir bileşen olmalıdır.
 - Bileşenleriniz tarafından üretilen DOM, prototipteki DOM ile tam olarak eşleşmelidir:
   - HTML öğelerinin hiyerarşisi, idleri, class adları vb. aynı olmalıdır..
-  - Geçerli kare, büyük bir B ve "active" class adıyla işaretlenmiştir. 
+  - Geçerli kare, büyük bir B ve "active" class adıyla işaretlenmiştir.
   - Sayfada görüntülenen submit başarısı ve hata mesajları API'den gelir.(Network tabını inceleyin).
   - Frontend form doğrulama eklemenize gerek yok.
 - Gridin her bir karesinin koordinatları aşağıdaki gibidir:
 
   ```js
-    (1, 1) (2, 1) (3, 1)
-    (1, 2) (2, 2) (3, 2)
-    (1, 3) (2, 3) (3, 3)
+  (1, 1)(2, 1)(3, 1)(1, 2)(2, 2)(3, 2)(1, 3)(2, 3)(3, 3);
   ```
 
 ❗ TÜM TESTLER GEÇMELİ
@@ -83,11 +81,11 @@ Bu challengeda bir [WIDGET](https://advanced-react-grid.herokuapp.com/) için bi
   ```js
   // Bir gridi temsil etmek için düz bir dizi kullanılabilir.
   // Ancak Uygulama bileşenimizin tüm diziyi izlemesi gerekmez, yalnızca "B"nin olduğu dizini izlemesi gerekir.
-  [null, null, null, null, "B", null, null, null, null]
-
-  // Bir gridi temsil etmek için 2 boyutlu diziler veya matrisler kullanılabilir, ancak bu, bu projede önerilmez:
-  [[null, null, null], [null, "B", null], [null, null, null]]
+  [null, null, null, null, "B", null, null, null, null][
+    // Bir gridi temsil etmek için 2 boyutlu diziler veya matrisler kullanılabilir, ancak bu, bu projede önerilmez:
+    ([null, null, null], [null, "B", null], [null, null, null])
+  ];
 
   // Bir string de işe yarayabilir, ancak JS'deki stringler değişmezdir ve bu yaklaşımı elverişsiz hale getirir:
-  "xxxxBxxxx"
+  ("xxxxBxxxx");
   ```
