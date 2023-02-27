@@ -23,7 +23,7 @@ export default function AppFunctional(props) {
     // Bunları hesaplayabilmek için "B" nin hangi indexte olduğunu bilmek yeterlidir.
     let coordinates = {
       x: (data.index % 3) + 1,
-      y: Math.ceil(data.index / 3),
+      y: Math.floor(data.index / 3) + 1,
     };
     return coordinates;
   }
@@ -76,6 +76,7 @@ export default function AppFunctional(props) {
         ["steps"]: data.steps + 1,
         ["index"]: newYon,
       });
+    console.log(newYon);
   }
 
   function onChange(evt) {
@@ -95,6 +96,7 @@ export default function AppFunctional(props) {
       steps: data.steps,
       email: data.email,
     };
+    console.log("email", data.email);
 
     if (post.email === "") {
       setData({ ...data, ["message"]: "Ouch: email is required" });
